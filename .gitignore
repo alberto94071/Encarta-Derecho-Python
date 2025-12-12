@@ -1,0 +1,6 @@
+# Entornos virtuales
+venv/
+*.pyc
+# macOS / Windows
+.DS_Store
+Thumbs.db
