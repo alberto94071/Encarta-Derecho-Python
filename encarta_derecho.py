@@ -2,7 +2,7 @@ import customtkinter as ctk
 from PIL import Image
 import os
 from datetime import datetime
-
+import ctypes
 # =================================================================
 # CONFIGURACIÓN VISUAL
 # =================================================================
@@ -197,8 +197,11 @@ class EncartaFinalApp(ctk.CTk):
         self.title("Aprende Derecho | USAC - Proyecto Final")
         self.geometry("1000x700")
         
+        # El archivo logo.ico debe estar en la misma carpeta
+        if os.path.exists("derecho.ico"):
+            self.iconbitmap("derecho.ico")
         # --- Variables de Lógica ---
-        self.PUNTAJE_PARA_DIPLOMA = 150
+        self.PUNTAJE_PARA_DIPLOMA = 170
         self.puntajeTotal = 0
         self.temaActual = ""
         self.quizzesCompletados = set()
@@ -529,5 +532,11 @@ class EncartaFinalApp(ctk.CTk):
         self.mostrar_frame("equipo")
 
 if __name__ == "__main__":
+    try:
+        
+        my_appid = 'usac.derecho.proyecto.encarta.v1' 
+        ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(my_appid)
+    except Exception as e:
+        pass 
     app = EncartaFinalApp()
     app.mainloop()
