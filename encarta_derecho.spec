@@ -5,7 +5,7 @@ a = Analysis(
     ['encarta_derecho.py'],
     pathex=[],
     binaries=[],
-    datas=[],
+    datas=[('logo.ico', '.'), ('logo.png', '.'), ('Tania.jpeg', '.'), ('Marisol.jpeg', '.'), ('Nazzary.jpeg', '.'), ('Mariela.jpeg', '.')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
@@ -35,5 +35,5 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
-    icon=['derecho.ico'],
+    icon=['logo.ico'],
 )
